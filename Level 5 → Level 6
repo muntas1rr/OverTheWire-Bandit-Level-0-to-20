@@ -1,0 +1,55 @@
+Bandit Level 5 → Level 6
+
+Level Goal: The password for the next level is stored in a file somewhere under the inhere directory and
+has the following properties: human-readable, 1033 bytes in size, and not executable.
+
+I listed files in the home directory using ls and changed into the inhere directory with cd inhere.
+I used find . -type f -size 1033c ! -executable to locate files that are exactly 1033 bytes and not executable. 
+The command returned ./maybehere07/.file2. I displayed that file with cat maybehere07/.file2 which showed the password for the next level.
+
+
+
+Terminal Output:
+
+bandit5@bandit:~$ ls
+inhere
+
+bandit5@bandit:~$ cd inhere
+
+bandit5@bandit:~/inhere$ ls -l
+total 80
+drwxr-x--- 2 root bandit5 4096 Oct 14 09:26 maybehere00
+drwxr-x--- 2 root bandit5 4096 Oct 14 09:26 maybehere01
+drwxr-x--- 2 root bandit5 4096 Oct 14 09:26 maybehere02
+drwxr-x--- 2 root bandit5 4096 Oct 14 09:26 maybehere03
+drwxr-x--- 2 root bandit5 4096 Oct 14 09:26 maybehere04
+drwxr-x--- 2 root bandit5 4096 Oct 14 09:26 maybehere05
+drwxr-x--- 2 root bandit5 4096 Oct 14 09:26 maybehere06
+drwxr-x--- 2 root bandit5 4096 Oct 14 09:26 maybehere07
+drwxr-x--- 2 root bandit5 4096 Oct 14 09:26 maybehere08
+drwxr-x--- 2 root bandit5 4096 Oct 14 09:26 maybehere09
+drwxr-x--- 2 root bandit5 4096 Oct 14 09:26 maybehere10
+drwxr-x--- 2 root bandit5 4096 Oct 14 09:26 maybehere11
+drwxr-x--- 2 root bandit5 4096 Oct 14 09:26 maybehere12
+drwxr-x--- 2 root bandit5 4096 Oct 14 09:26 maybehere13
+drwxr-x--- 2 root bandit5 4096 Oct 14 09:26 maybehere14
+drwxr-x--- 2 root bandit5 4096 Oct 14 09:26 maybehere15
+drwxr-x--- 2 root bandit5 4096 Oct 14 09:26 maybehere16
+drwxr-x--- 2 root bandit5 4096 Oct 14 09:26 maybehere17
+drwxr-x--- 2 root bandit5 4096 Oct 14 09:26 maybehere18
+drwxr-x--- 2 root bandit5 4096 Oct 14 09:26 maybehere19
+
+bandit5@bandit:~/inhere$ find . -type f -size 1033c ! -executable
+./maybehere07/.file2
+
+bandit5@bandit:~/inhere$ cat maybehere07/.file2
+HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+
+
+
+
+Entered the SSH command: ssh bandit6@bandit.labs.overthewire.org -p 2220
+
+When prompted for the password, I pasted the password from the file (HWasnPhtq9AVKe0dmk45nxy20cvUa6EG). And up to the next level.
+
+
