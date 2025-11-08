@@ -11,6 +11,8 @@ There was a file named "-". I used "cat ./-" to read the file (prefixing with ./
 
 
 
+Terminal Output:
+
 bandit1@bandit:~$ ls
 -
 bandit1@bandit:~$ cat ./-
@@ -22,3 +24,4 @@ bandit1@bandit:~$ cat ./-
 Entered the SSH command: ssh bandit2@bandit.labs.overthewire.org -p 2220
 
 When prompted for the password, I pasted the password from the file (263JGJPfgU6LtdEvgfWU1XP5yac29mFx). And up to the next level.
+
