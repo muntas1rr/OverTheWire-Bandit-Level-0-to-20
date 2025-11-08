@@ -1,0 +1,24 @@
+Bandit Level 1 → Level 2
+
+Level Goal: The password for the next level is stored in a file called "-" located in the home directory.
+
+
+
+I listed files in the home directory using the ls command.
+
+There was a file named "-". I used "cat ./-" to read the file (prefixing with ./ prevents the - from being treated as an option). This displayed the password for the next level.
+
+
+
+
+bandit1@bandit:~$ ls
+-
+bandit1@bandit:~$ cat ./-
+263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+
+
+
+
+Entered the SSH command: ssh bandit2@bandit.labs.overthewire.org -p 2220
+
+When prompted for the password, I pasted the password from the file (263JGJPfgU6LtdEvgfWU1XP5yac29mFx). And up to the next level.
