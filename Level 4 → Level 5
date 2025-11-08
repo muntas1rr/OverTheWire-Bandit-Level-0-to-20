@@ -1,0 +1,46 @@
+Bandit Level 4 → Level 5
+
+Level Goal: The password for the next level is stored in the only human-readable file in the inhere directory.
+
+
+
+I listed files in the home directory using the ls command and saw the inhere directory. 
+I changed into that directory with cd inhere and listed the files using ls. There were multiple files named like -file00 through -file09. 
+To find which one was human-readable, I ran file ./* to check each file's type. 
+The output showed that -file07 was ASCII text. I read it with cat ./-file07 which displayed the password for the next level.
+
+
+
+Terminal Output:
+
+bandit4@bandit:~$ ls
+inhere
+
+bandit4@bandit:~$ cd inhere
+
+bandit4@bandit:~/inhere$ ls
+-file00 -file02 -file04 -file06 -file08
+-file01 -file03 -file05 -file07 -file09
+
+bandit4@bandit:~/inhere$ file ./*
+./-file00: data
+./-file01: OpenPGP Public Key
+./-file02: OpenPGP Public Key
+./-file03: data
+./-file04: data
+./-file05: data
+./-file06: data
+./-file07: ASCII text
+./-file08: data
+./-file09: data
+
+bandit4@bandit:~/inhere$ cat ./-file07
+4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+
+
+
+
+Entered the SSH command: ssh bandit5@bandit.labs.overthewire.org -p 2220
+
+When prompted for the password, I pasted the password from the file (4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw). And up to the next level.
+
