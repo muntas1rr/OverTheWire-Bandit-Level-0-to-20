@@ -1,0 +1,31 @@
+Bandit Level 2 → Level 3
+
+Level Goal: The password for the next level is stored in a file called --spaces in this filename-- located in the home directory.
+
+
+
+I listed files in the home directory using the ls command.
+
+There was a file named --spaces in this filename--. Because the filename begins with dashes and contains spaces, 
+I used an explicit path with escaped spaces to prevent the shell from treating the dashes as options: cat ./--spaces\ in\ this\ filename--
+
+This displayed the password for the next level.
+
+
+
+
+Terminal Output:
+
+bandit2@bandit:~$ ls
+--spaces in this filename--
+
+bandit2@bandit:~$ cat ./--spaces\ in\ this\ filename--
+MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+
+
+
+
+Entered the SSH command: ssh bandit3@bandit.labs.overthewire.org -p 2220
+
+When prompted for the password, I pasted the password from the file (MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx). And up to the next level.
+
