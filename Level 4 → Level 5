@@ -11,6 +11,7 @@ The output showed that -file07 was ASCII text. I read it with cat ./-file07 whic
 
 
 
+
 Terminal Output:
 
 bandit4@bandit:~$ ls
@@ -43,4 +44,6 @@ bandit4@bandit:~/inhere$ cat ./-file07
 Entered the SSH command: ssh bandit5@bandit.labs.overthewire.org -p 2220
 
 When prompted for the password, I pasted the password from the file (4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw). And up to the next level.
+
+
 
