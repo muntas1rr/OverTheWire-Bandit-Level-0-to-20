@@ -10,6 +10,7 @@ There was a file called readme. I input "cat readme". This showed the password f
 
 
 
+
 Terminal Output:
 
 bandit0@bandit:~$ ls 
@@ -31,4 +32,3 @@ The password you are looking for is: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
 Entered the SSH command: ssh bandit1@bandit.labs.overthewire.org -p 2220
 
 When prompted for the password, I pasted the password from the readme file. And up to the next level.
-
