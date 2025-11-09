@@ -1,0 +1,34 @@
+Bandit Level 9 → Level 10
+
+Level Goal: The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.
+
+
+
+I listed files in the home directory with ls and saw data.txt.
+I used strings data.txt | grep == to extract printable strings that were preceded by '==' and identify lines beginning with multiple '=' characters.
+One of the matching lines contained the password for the next level.
+
+
+
+
+Terminal Output:
+
+bandit9@bandit:~$ ls
+data.txt
+
+bandit9@bandit:~$ strings data.txt | grep ==
+========== the
+========== password
+f\Z'========== is
+========== FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+
+
+
+
+Entered the SSH command: ssh bandit10@bandit.labs.overthewire.org -p 2220
+
+When prompted for the password, I pasted the password from the file (FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey). And up to the next level.
+
+
+
+
