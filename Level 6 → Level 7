@@ -29,3 +29,6 @@ morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
 Entered the SSH command: ssh bandit7@bandit.labs.overthewire.org -p 2220
 
 When prompted for the password, I pasted the password from the file (morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj). And up to the next level.
+
+
+
