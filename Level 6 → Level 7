@@ -1,0 +1,31 @@
+Bandit Level 6 → Level 7
+
+Level Goal: The password for the next level is stored somewhere on the server and 
+has all of the following properties: owned by user bandit7, owned by group bandit6, and 33 bytes in size.
+
+
+
+I used this find command find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null to search the filesystem for regular files 
+owned by bandit7, group bandit6, and exactly 33 bytes using find. I appended 2>/dev/null, to hide the error messages. 
+The command returned /var/lib/dpkg/info/bandit7.password. I displayed that file with cat /var/lib/dpkg/info/bandit7.password, 
+which showed the password for the next level.
+
+
+
+
+Terminal Output:
+
+bandit6@bandit:~$ ls
+
+bandit6@bandit:~$ find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null
+/var/lib/dpkg/info/bandit7.password
+
+bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password
+morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+
+
+
+
+Entered the SSH command: ssh bandit7@bandit.labs.overthewire.org -p 2220
+
+When prompted for the password, I pasted the password from the file (morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj). And up to the next level.
