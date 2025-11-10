@@ -8,7 +8,7 @@ For this level you are given a private SSH key (sshkey.private) which must be us
 
 I listed files in my bandit13 home directory with ls and saw sshkey.private.
 I displayed the private key with cat sshkey.private to copy it to my local machine (do not share this key publicly).
-I logged out of the bandit13 shell, saved the key locally into a file named key, set secure permissions, and used it to SSH into bandit14 on the remote server.
+I logged out of the bandit13 shell, saved the key locally into a file named key, set secure permissions, and used it to get to the next level.
 
 
 
@@ -40,5 +40,6 @@ ubuntu:~$ ssh bandit14@bandit.labs.overthewire.org -p 2220 -i key
 (SSH session established; OverTheWire welcome banner and MOTD shown)
 
 bandit14@bandit:~$
+
 
 
