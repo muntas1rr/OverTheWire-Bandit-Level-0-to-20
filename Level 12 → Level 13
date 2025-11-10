@@ -1,0 +1,344 @@
+Bandit Level 12 → Level 13
+
+Level Goal: The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed.
+
+This is is little bit long, but please bear with me... 
+
+
+
+I created a temporary working directory with mktemp -d, copied data.txt there, and renamed it to indicate its purpose. 
+I reversed the hexdump using xxd -r to recover the binary, then used file to identify each compression type. 
+I renamed files with the appropriate extensions when needed and repeatedly decompressed them using gzip, bzip2, and 
+tar until I reached a plain-text file containing the password.
+
+
+
+
+Terminal Output:
+
+bandit12@bandit:~$ mktemp -d
+/tmp/tmp.p92EagA32V
+
+bandit12@bandit:~$ ls
+data.txt
+
+bandit12@bandit:~$ cd /tmp/tmp.p92EagA32V
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ cp ~/data.txt .
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ ls
+data.txt
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ mv data.txt hexdump_data
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ ls
+hexdump_data
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ xxd -r hexdump_data compressed_data
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ ls
+compressed_data  hexdump_data
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ file compressed_data
+compressed_data: gzip compressed data, was "data2.bin", last modified: Tue Oct 14 09:26:00 2025, max compression, from Unix, original size modulo 2^32 572
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ ls
+compressed_data  hexdump_data
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ mv compressed_data compressed_data.gz
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ ls
+compressed_data.gz  hexdump_data
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ gzip -d compressed_data.gz
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ ls
+compressed_data  hexdump_data
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ file compressed_data
+compressed_data: bzip2 compressed data, block size = 900k
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ mv compressed_data compressed_data.bz2
+bzip2 -d compressed_data.bz2
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ ls
+compressed_data  hexdump_data
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ file compressed_data
+compressed_data: gzip compressed data, was "data4.bin", last modified: Tue Oct 14 09:26:00 2025, max compression, from Unix, original size modulo 2^32 20480
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ mv compressed_data compressed_data.gz
+gzip -d compressed_data.gz
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ ls
+compressed_data  hexdump_data
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ file compressed_data
+compressed_data: POSIX tar archive (GNU)
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ tar -xf compressed_data
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ ls
+compressed_data  data5.bin  hexdump_data
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ file data5.bin
+data5.bin: POSIX tar archive (GNU)
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ tar -xf data5.bin
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ ls
+compressed_data  data5.bin  data6.bin  hexdump_data
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ file data6.bin
+data6.bin: bzip2 compressed data, block size = 900k
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ mv data6.bin data6.bz2
+bzip2 -d data6.bz2
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ ls
+compressed_data  data5.bin  data6  hexdump_data
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ file data6
+data6: POSIX tar archive (GNU)
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ tar -xf data6
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ ls
+compressed_data  data5.bin  data6  data8.bin  hexdump_data
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ file data8.bin
+data8.bin: gzip compressed data, was "data9.bin", last modified: Tue Oct 14 09:26:00 2025, max compression, from Unix, original size modulo 2^32 49
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ mv data8.bin data8.gz
+gzip -d data8.gz
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ ls
+file data8
+compressed_data  data5.bin  data6  data8  hexdump_data
+data8: ASCII text
+
+bandit12@bandit:/tmp/tmp.p92EagA32V$ cat data8
+The password is FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
+
+
+
+
+Line by line, short and direct explanations:
+
+* `bandit12@bandit:~$ mktemp -d`
+    -- runs mktemp to make a temp directory.
+    
+* `/tmp/tmp.p92EagA32V`
+    -- mktemp printed the new directory it made. That’s where we’ll work.
+    
+* `bandit12@bandit:~$ ls`
+    -- listed files in home.
+    
+* `data.txt`
+    -- output: `data.txt` is in the home dir. That’s our starting file.
+    
+* `bandit12@bandit:~$ cd /tmp/tmp.p92EagA32V`
+    -- change into the temp directory mktemp created.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ cp ~/data.txt .`
+    -- copy the challenge file from your home into the temp folder. The `.` means “current dir.”
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ ls`
+    -- show files in temp dir.
+    
+* `data.txt`
+    -- output: `data.txt` is now here.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ mv data.txt hexdump_data`  
+    -- rename `data.txt` to `hexdump_data` — makes the purpose obvious.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ ls`
+    -- list files again.
+    
+* `hexdump_data`
+    -- output: confirms rename worked.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ xxd -r hexdump_data compressed_data`
+    -- reverse the hex dump. `xxd -r` converts the hexdump back to the original binary and writes it to `compressed_data`.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ ls`  
+    -- show files.
+    
+* `compressed_data hexdump_data`
+    -- output: you now have a binary `compressed_data` and the original hexdump file.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ file compressed_data`  
+    -- ask `file` what this binary is.
+    
+* `compressed_data: gzip compressed data, was "data2.bin", last modified: Tue Oct 14 09:26:00 2025, max compression, from Unix, original size modulo 2^32 572`
+    -- `file` says it’s gzip data. Good — next step is gzip.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ ls`  
+    -- just checking contents again (no change yet).
+    
+* `compressed_data hexdump_data`  
+    -- confirms files present.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ mv compressed_data compressed_data.gz`  
+    -- rename to add `.gz` so gzip recognizes it.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ ls`  
+    -- list again.
+    
+* `compressed_data.gz hexdump_data`  
+    -- shows the rename worked.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ gzip -d compressed_data.gz`  
+    -- decompress the gzip file. `-d` tells gzip “decompress.”
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ ls`  
+    -- show files again.
+    
+* `compressed_data hexdump_data`  
+    -- gzip decompressed and left `compressed_data` (now different contents).
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ file compressed_data`
+    -- check what this new binary is.
+    
+* `compressed_data: bzip2 compressed data, block size = 900k`  
+    -- `file` says it’s bzip2 now.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ mv compressed_data compressed_data.bz2`  
+    -- rename to `.bz2` so bzip2 tools recognize it.
+    
+* `bzip2 -d compressed_data.bz2`  
+    -- run the bzip2 decompressor. `-d` decompresses.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ ls`  
+    -- list files.
+    
+* `compressed_data hexdump_data`  
+    -- bzip2 decompressed to `compressed_data` (new contents).
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ file compressed_data`  
+    -- check the type again.
+    
+* `compressed_data: gzip compressed data, was "data4.bin", last modified: Tue Oct 14 09:26:00 2025, max compression, from Unix, original size modulo 2^32 20480`
+    -- it’s gzip again.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ mv compressed_data compressed_data.gz`  
+    -- rename to `.gz`.
+    
+* `gzip -d compressed_data.gz`
+    -- decompress the gzip.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ ls`  
+    -- list files.
+    
+* `compressed_data hexdump_data`  
+    -- decompressed now check type.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ file compressed_data`  
+    -- what is `compressed_data` now?
+    
+* `compressed_data: POSIX tar archive (GNU)`  
+    -- it’s a tar archive.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ tar -xf compressed_data`  
+    -- extract the tar archive in the current directory. `-x` extract, `-f` specify file.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ ls`  
+    -- list files.
+    
+* `compressed_data data5.bin hexdump_data`  
+    -- tar dropped `data5.bin` into the folder.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ file data5.bin`  
+    -- check what `data5.bin` is.
+    
+* `data5.bin: POSIX tar archive (GNU)`  
+    -- another tar inside.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ tar -xf data5.bin`  
+    -- extract that tar.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ ls`  
+    -- list.
+    
+* `compressed_data data5.bin data6.bin hexdump_data`  
+    -- extraction produced `data6.bin`.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ file data6.bin`  
+    -- check `data6.bin`.
+    
+* `data6.bin: bzip2 compressed data, block size = 900k`  
+    -- it’s bzip2 compressed.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ mv data6.bin data6.bz2`  
+    -- rename to `.bz2`.
+    
+* `bzip2 -d data6.bz2`  
+    -- decompress the bzip2 file.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ ls`
+    -- list.
+    
+* `compressed_data data5.bin data6 hexdump_data`  
+    -- `data6` (no extension) produced.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ file data6`  
+    -- check `data6`.
+    
+* `data6: POSIX tar archive (GNU)`  
+    -- it’s a tar again.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ tar -xf data6`  
+    -- extract `data6`.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ ls`  
+    -- list.
+    
+* `compressed_data data5.bin data6 data8.bin hexdump_data`  
+    -- extraction produced `data8.bin`.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ file data8.bin`  
+    -- check `data8.bin`.
+    
+* `data8.bin: gzip compressed data, was "data9.bin", last modified: Tue Oct 14 09:26:00 2025, max compression, from Unix, original size modulo 2^32 49`  
+    -- tiny gzip file — promising.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ mv data8.bin data8.gz`  
+    -- rename to `.gz`.
+    
+* `gzip -d data8.gz`  
+    -- decompress it.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ ls`  
+    - list.
+    
+* `file data8`
+    -- ran `ls` then `file data8` (combined lines show the `file` output below).
+    
+* `compressed_data data5.bin data6 data8 hexdump_data`  
+    -- `ls` output showing `data8` is present.
+    
+* `data8: ASCII text`  
+    -- `file` says `data8` is plain text — final layer.
+    
+* `bandit12@bandit:/tmp/tmp.p92EagA32V$ cat data8`  
+    -- print the file.
+    
+* `The password is FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn`  
+    -- the file prints the password you needed.
+
+
+
+
+Entered the SSH command: ssh bandit13@bandit.labs.overthewire.org -p 2220
+
+When prompted for the password, I pasted the password from the file (FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn). And up to the next level.
+
+
+** BONUS **
+
+Check out my LinkedIn post about this Level - 
+
+https://www.linkedin.com/posts/moque_linux-devops-problemsolving-activity-7391851810128306177-uk3e?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFS5ZQoBgOu59hBf6sHx7pXGLogMvszOzw0
+
+
+
