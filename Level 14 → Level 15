@@ -1,0 +1,29 @@
+Bandit Level 14 → Level 15
+
+Level Goal: The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
+
+I read the current level password from /etc/bandit_pass/bandit14 using cat.
+I submitted that password to localhost port 30000 using netcat (nc). The server responded with "Correct!" and printed the password for the next level.
+
+
+
+Terminal Output:
+
+bandit14@bandit:~$ cat /etc/bandit_pass/bandit14
+MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+
+bandit14@bandit:~$ nc localhost 30000
+MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+Correct!
+8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+
+
+
+
+Entered the SSH command: ssh bandit15@bandit.labs.overthewire.org -p 2220
+
+When prompted for the password, I pasted the password returned from the port (8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo). And up to the next level.
+
+
+
+
