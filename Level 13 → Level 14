@@ -1,0 +1,44 @@
+Bandit Level 13 → Level 14
+
+Level Goal: The password for the next level is stored in /etc/bandit_pass/bandit14 and can only be read by user bandit14. 
+For this level you are given a private SSH key (sshkey.private) which must be used from your local machine to log into 
+[bandit14@bandit.labs.overthewire.org](mailto:bandit14@bandit.labs.overthewire.org) on port 2220.
+
+
+
+I listed files in my bandit13 home directory with ls and saw sshkey.private.
+I displayed the private key with cat sshkey.private to copy it to my local machine (do not share this key publicly).
+I logged out of the bandit13 shell, saved the key locally into a file named key, set secure permissions, and used it to SSH into bandit14 on the remote server.
+
+
+
+
+Terminal Output (remote):
+
+bandit13@bandit:~$ ls
+sshkey.private
+
+bandit13@bandit:~$ cat sshkey.private
+-----BEGIN RSA PRIVATE KEY-----
+[PRIVATE KEY CONTENT REDACTED]
+-----END RSA PRIVATE KEY-----
+
+bandit13@bandit:~$ exit
+logout
+Connection to bandit.labs.overthewire.org closed.
+
+Terminal Output (local):
+
+ubuntu:~$ echo "-----BEGIN RSA PRIVATE KEY-----
+[PRIVATE KEY CONTENT REDACTED]
+-----END RSA PRIVATE KEY-----" > key
+
+ubuntu:~$ chmod 700 key
+
+ubuntu:~$ ssh bandit14@bandit.labs.overthewire.org -p 2220 -i key
+
+(SSH session established; OverTheWire welcome banner and MOTD shown)
+
+bandit14@bandit:~$
+
+
