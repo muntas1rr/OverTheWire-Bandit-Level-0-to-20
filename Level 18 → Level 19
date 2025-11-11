@@ -14,6 +14,8 @@ After logging in, I read the readme file to find the password for the next level
 
 
 
+Terminal Output:
+
 ubuntu:~$ ssh bandit18@bandit.labs.overthewire.org -p 2220
 (password prompt) [I INPUT THE PASSWORD]
 Byebye! (logged out immediately)
@@ -32,8 +34,6 @@ $ cat readme
 
 Entered the SSH command: ssh bandit19@bandit.labs.overthewire.org -p 2220
 When prompted for the password, I pasted the password for the next level. And up to the next level.
-
-
 
 
 
