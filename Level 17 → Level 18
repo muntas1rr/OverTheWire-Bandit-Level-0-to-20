@@ -1,0 +1,39 @@
+Bandit Level 17 → Level 18
+
+Level Goal:
+
+The password for the next level is in the passwords.new file in the home directory and is the only line that has been changed between passwords.old and passwords.new.
+
+
+
+I listed files in the home directory using ls and saw passwords.old and passwords.new.
+I used the diff passwords.old passwords.new command and found the line that differed. 
+I then extracted only the changed line using diff passwords.old passwords.new | grep '>' | sed 's/> //'. 
+This gave me the new password for bandit18.
+
+
+
+Terminal Output:
+
+bandit17@bandit:~$ ls
+passwords.new  passwords.old
+
+bandit17@bandit:~$ diff passwords.old passwords.new
+42c42
+< [old password - censored]
+---
+> [new password - censored]
+
+bandit17@bandit:~$ diff passwords.old passwords.new | grep '>' | sed 's/> //'
+[new password - censored]
+
+
+
+
+Entered the SSH command: ssh bandit18@bandit.labs.overthewire.org -p 2220
+
+When prompted for the password, I pasted the password from the file. And up to the next level.
+
+
+
+
