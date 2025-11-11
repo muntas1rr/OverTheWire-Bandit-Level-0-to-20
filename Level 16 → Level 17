@@ -1,0 +1,59 @@
+Bandit Level 16 → Level 17
+
+Level Goal: The password for the next level is obtained by sending the current level password to 
+an SSL service running on one of the ports in the range 31000–32000. 
+The service returns a private SSH key when the correct password is submitted.
+
+
+
+I scanned localhost ports 31000–32000 with nmap -sV to find open/SSL services.
+I identified an SSL service on port 31790, sent the current password (kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx) to that port using openssl s_client -connect localhost:31790 -quiet,
+and the service responded with “Correct!” followed by a private RSA key. I saved the returned key locally as bandit17.key,
+set secure permissions, and used it to SSH into bandit17 on the remote server.
+
+
+
+
+Terminal Output (remote):
+
+bandit16@bandit:~$ nmap -sV localhost -p 31000-32000
+(…nmap output showing open ports…)
+31790/tcp open  ssl/unknown
+(…)
+
+bandit16@bandit:~$ echo "kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx" | openssl s_client -connect localhost:31790 -quiet
+Can't use SSL_get_servername
+depth=0 CN = SnakeOil
+verify error:num=18:self-signed certificate
+verify return:1
+depth=0 CN = SnakeOil
+verify return:1
+Correct!
+-----BEGIN RSA PRIVATE KEY-----
+[PRIVATE KEY CONTENT REDACTED]
+-----END RSA PRIVATE KEY-----
+
+bandit16@bandit:~$ exit
+logout
+Connection to bandit.labs.overthewire.org closed.
+
+
+Terminal Output (local):
+
+ubuntu:~$ cat > bandit17.key << 'EOF'
+-----BEGIN RSA PRIVATE KEY-----
+[PRIVATE KEY CONTENT REDACTED]
+-----END RSA PRIVATE KEY-----
+EOF
+
+ubuntu:~$ chmod 600 bandit17.key
+
+ubuntu:~$ ssh -i bandit17.key bandit17@bandit.labs.overthewire.org -p 2220
+(SSH session established; OverTheWire welcome banner shown)
+
+bandit17@bandit:~$
+
+
+
+
+
