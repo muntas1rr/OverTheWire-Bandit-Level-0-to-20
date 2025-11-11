@@ -1,0 +1,39 @@
+Bandit Level 20 → Level 21
+
+Level Goal:
+
+There is a setuid binary named suconnect in the home directory which connects to localhost on the port you specify. 
+It reads a line of text from that connection and compares it to the password from the previous level. 
+If the password is correct, it sends back the password for the next level.
+
+
+
+I ran two commands in two terminals as bandit20. In one terminal, 
+I started a netcat listener on port 9999 and pasted the previous level password. 
+In the other terminal, I ran ./suconnect 9999, which connected to the listener, verified the password, 
+and sent the next password back to the netcat terminal.
+
+
+
+
+Terminal Output (Terminal 1):
+
+bandit20@bandit:~$ ./suconnect
+Usage: ./suconnect <portnumber>
+This program will connect to the given port on localhost using TCP. If it receives the correct password from the other side, the next password is transmitted back.
+
+bandit20@bandit:~$ ./suconnect 2020
+Read: [The Password of the previous level]
+Password matches, sending next password
+
+
+
+Terminal Output (Terminal 2):
+
+bandit20@bandit:~$ nc -lvp 2020
+Listening on 0.0.0.0 2020
+Connection received on localhost 37318
+[The Password of the previous level]
+[The Password for the next level]
+
+
