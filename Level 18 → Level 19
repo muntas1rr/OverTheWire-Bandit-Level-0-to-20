@@ -1,0 +1,39 @@
+Bandit Level 18 → Level 19
+
+Level Goal:
+
+The next level’s password is in the readme file in the home directory, 
+but logging in normally logs you out instantly due to .bashrc modifications.
+
+
+
+I tried logging in normally with SSH, but was immediately logged out. So, 
+I used SSH with the -t /bin/sh option to start a shell and avoid automatic logout. 
+After logging in, I read the readme file to find the password for the next level.
+
+
+
+
+ubuntu:~$ ssh bandit18@bandit.labs.overthewire.org -p 2220
+(password prompt) [I INPUT THE PASSWORD]
+Byebye! (logged out immediately)
+
+ubuntu:~$ ssh -p 2220 bandit18@bandit.labs.overthewire.org -t /bin/sh
+# (password prompt) [I LOGGED IN AFTER INPUTTING THE PASSWORD]
+
+$ ls
+readme
+
+$ cat readme
+[Password for the next level]
+
+
+
+
+Entered the SSH command: ssh bandit19@bandit.labs.overthewire.org -p 2220
+When prompted for the password, I pasted the password for the next level. And up to the next level.
+
+
+
+
+
