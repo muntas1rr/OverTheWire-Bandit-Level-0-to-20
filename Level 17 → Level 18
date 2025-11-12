@@ -10,7 +10,6 @@ is the only line that has been changed between passwords.old and passwords.new.
 I listed files in the home directory using ls and saw passwords.old and passwords.new.
 I used the diff passwords.old passwords.new command and found the line that differed. 
 I then extracted only the changed line using diff passwords.old passwords.new | grep '>' | sed 's/> //'. 
-
 This gave me the new password for bandit18.
 
 
@@ -35,6 +34,7 @@ bandit17@bandit:~$ diff passwords.old passwords.new | grep '>' | sed 's/> //'
 Entered the SSH command: ssh bandit18@bandit.labs.overthewire.org -p 2220
 
 When prompted for the password, I pasted the password. And up to the next level.
+
 
 
 
