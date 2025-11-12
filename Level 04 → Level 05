@@ -5,7 +5,8 @@ Level Goal: The password for the next level is stored in the only human-readable
 
 
 I listed files in the home directory using the ls command and saw the inhere directory. 
-I changed into that directory with cd inhere and listed the files using ls. There were multiple files named like -file00 through -file09. 
+I changed into that directory with cd inhere and listed the files using ls. 
+There were multiple files named like -file00 through -file09. 
 To find which one was human-readable, I ran file ./* to check each file's type. 
 The output showed that -file07 was ASCII text. I read it with cat ./-file07 which displayed the password for the next level.
 
@@ -44,6 +45,7 @@ bandit4@bandit:~/inhere$ cat ./-file07
 Entered the SSH command: ssh bandit5@bandit.labs.overthewire.org -p 2220
 
 When prompted for the password, I pasted the password. And up to the next level.
+
 
 
 
