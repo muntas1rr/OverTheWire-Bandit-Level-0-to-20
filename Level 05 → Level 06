@@ -7,7 +7,6 @@ has the following properties: human-readable, 1033 bytes in size, and not execut
 
 I listed files in the home directory using ls and changed into the inhere directory with cd inhere.
 I used find . -type f -size 1033c ! -executable to locate files that are exactly 1033 bytes and not executable. 
-
 The command returned ./maybehere07/.file2. I displayed that file with cat maybehere07/.file2 which showed the password for the next level.
 
 
@@ -55,6 +54,7 @@ bandit5@bandit:~/inhere$ cat maybehere07/.file2
 Entered the SSH command: ssh bandit6@bandit.labs.overthewire.org -p 2220
 
 When prompted for the password, I pasted the password. And up to the next level.
+
 
 
 
