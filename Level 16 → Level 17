@@ -6,7 +6,8 @@ The service returns a private SSH key when the correct password is submitted.
 
 
 
-I scanned localhost ports 31000–32000 with nmap -sV to find open/SSL services. I identified an SSL service on port 31790, sent the current password to that port
+I scanned localhost ports 31000–32000 with nmap -sV to find open/SSL services. 
+I identified an SSL service on port 31790, sent the current password to that port
 using openssl s_client -connect localhost:31790 -quiet, and the service responded with
 “Correct!” followed by a private RSA key. I saved the returned key locally as bandit17.key,
 set secure permissions, and used it to SSH into bandit17 on the remote server.
@@ -52,6 +53,7 @@ ubuntu:~$ ssh -i bandit17.key bandit17@bandit.labs.overthewire.org -p 2220
 (SSH session established; OverTheWire welcome banner shown)
 
 bandit17@bandit:~$
+
 
 
 
