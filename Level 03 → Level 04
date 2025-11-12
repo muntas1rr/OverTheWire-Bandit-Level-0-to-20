@@ -24,14 +24,15 @@ drwxr-xr-x 3 root root 4096 Oct 14 09:26 ..
 -rw-r----- 1 bandit4 bandit3 33 Oct 14 09:26 ...Hiding-From-You
 
 bandit3@bandit:~/inhere$ cat ./...Hiding-From-You
-[The Password for the next level]
+[REDACTED PASSWORD OUTPUT]
 
 
 
 
 Entered the SSH command: ssh bandit4@bandit.labs.overthewire.org -p 2220
 
-When prompted for the password, I pasted the password for the next level. And up to the next level.
+When prompted for the password, I pasted the password. And up to the next level.
+
 
 
 
