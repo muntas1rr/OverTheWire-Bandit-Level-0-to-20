@@ -10,7 +10,8 @@ This is is little bit long, but please bear with me...
 
 I created a temporary working directory with mktemp -d, copied data.txt there, and renamed it to indicate its purpose. 
 I reversed the hexdump using xxd -r to recover the binary, then used file to identify each compression type. 
-I renamed files with the appropriate extensions when needed and repeatedly decompressed them using gzip, bzip2, and 
+I renamed files with the appropriate extensions when needed and repeatedly decompressed them using gzip, bzip2, 
+and 
 tar until I reached a plain-text file containing the password.
 
 
@@ -341,6 +342,7 @@ When prompted for the password, I pasted the password. And up to the next level.
 Check out my LinkedIn post about this Level - 
 
 https://www.linkedin.com/posts/moque_linux-devops-problemsolving-activity-7391851810128306177-uk3e?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFS5ZQoBgOu59hBf6sHx7pXGLogMvszOzw0
+
 
 
 
