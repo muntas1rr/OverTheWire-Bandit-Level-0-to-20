@@ -6,8 +6,7 @@ Level Goal: The password for the next level is stored in the file data.txt, whic
 
 I listed files in the home directory with ls and saw data.txt.
 I viewed the file with cat data.txt and then decoded the base64 using base64 -d data.txt 
-to
-reveal the password for the next level.
+to reveal the password for the next level.
 
 
 
@@ -29,6 +28,7 @@ The password is [REDACTED PASSWORD OUTPUT]
 Entered the SSH command: ssh bandit11@bandit.labs.overthewire.org -p 2220
 
 When prompted for the password, I pasted the password. And up to the next level.
+
 
 
 
