@@ -1,6 +1,7 @@
 Bandit Level 15 → Level 16
 
-Level Goal: The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL/TLS encryption.
+Level Goal: The password for the next level can be retrieved by 
+submitting the password of the current level to port 30001 on localhost using SSL/TLS encryption.
 
 
 
@@ -18,17 +19,16 @@ CONNECTED(00000003)
 ...
 (SSL/TLS handshake details; self-signed certificate warning)
 ...
-8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+[PREVIOUS LEVEL PASSWORD]
 Correct!
-kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
+[REDACTED PASSWORD OUTPUT]
 
 
 
 
 Entered the SSH command: ssh bandit16@bandit.labs.overthewire.org -p 2220
 
-When prompted for the password, I pasted the password returned from the TLS service (kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx). And up to the next level.
-
+When prompted for the password, I pasted the password returned from the TLS service. And up to the next level.
 
 
 
