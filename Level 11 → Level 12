@@ -7,7 +7,6 @@ where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 po
 
 I listed files in the home directory with ls and saw data.txt.
 I used the tr command to decode the ROT13 cipher by rotating all letters 13 positions: tr 'A-Za-z' 'N-ZA-Mn-za-m' < data.txt
-
 The command revealed the password for the next level.
 
 
@@ -27,6 +26,7 @@ The password is [REDACTED PASSWORD OUTPUT]
 Entered the SSH command: ssh bandit12@bandit.labs.overthewire.org -p 2220
 
 When prompted for the password, I pasted the password. And up to the next level.
+
 
 
 
