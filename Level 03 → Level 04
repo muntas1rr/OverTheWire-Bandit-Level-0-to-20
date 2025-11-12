@@ -1,6 +1,10 @@
 Bandit Level 3 → Level 4
 
-Level Goal: The password for the next level is stored in a hidden file in the inhere directory.
+Level Goal: 
+
+The password for the next level is stored in a hidden file in the inhere directory.
+
+
 
 I listed files in the home directory using the ls command and saw the inhere directory. 
 I changed into that directory with cd inhere and listed all files, including hidden ones, using ls -la.
@@ -32,6 +36,7 @@ bandit3@bandit:~/inhere$ cat ./...Hiding-From-You
 Entered the SSH command: ssh bandit4@bandit.labs.overthewire.org -p 2220
 
 When prompted for the password, I pasted the password. And up to the next level.
+
 
 
 
