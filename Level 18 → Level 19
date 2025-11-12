@@ -9,6 +9,7 @@ but logging in normally logs you out instantly due to .bashrc modifications.
 
 I tried logging in normally with SSH, but was immediately logged out. So, 
 I used SSH with the -t /bin/sh option to start a shell and avoid automatic logout. 
+
 After logging in, I read the readme file to find the password for the next level.
 
 
@@ -34,6 +35,7 @@ $ cat readme
 Entered the SSH command: ssh bandit19@bandit.labs.overthewire.org -p 2220
 
 When prompted for the password, I pasted the password. And up to the next level.
+
 
 
 
