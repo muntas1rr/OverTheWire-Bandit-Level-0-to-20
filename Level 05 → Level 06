@@ -53,7 +53,7 @@ bandit5@bandit:~/inhere$ cat maybehere07/.file2
 
 Entered the SSH command: ssh bandit6@bandit.labs.overthewire.org -p 2220
 
-When prompted for the password, I pasted the password from the file. And up to the next level.
+When prompted for the password, I pasted the password for the next level. And up to the next level.
 
 
 
