@@ -10,19 +10,20 @@ I submitted that password to localhost port 30000 using netcat (nc). The server 
 Terminal Output:
 
 bandit14@bandit:~$ cat /etc/bandit_pass/bandit14
-MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+[PREVIOUS LEVEL PASSWORD]
 
 bandit14@bandit:~$ nc localhost 30000
-MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+[PREVIOUS LEVEL PASSWORD]
 Correct!
-8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+[REDACTED PASSWORD OUTPUT]
 
 
 
 
 Entered the SSH command: ssh bandit15@bandit.labs.overthewire.org -p 2220
 
-When prompted for the password, I pasted the password returned from the port (8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo). And up to the next level.
+When prompted for the password, I pasted the password returned from the port. And up to the next level.
+
 
 
 
