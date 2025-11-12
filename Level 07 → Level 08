@@ -17,13 +17,14 @@ bandit7@bandit:~$ ls
 data.txt
 
 bandit7@bandit:~$ grep millionth data.txt
-millionth       dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+millionth       [The Password for the next level]
 
 
 
 
 Entered the SSH command: ssh bandit8@bandit.labs.overthewire.org -p 2220
 
-When prompted for the password, I pasted the password from the file (dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc). And up to the next level.
+When prompted for the password, I pasted the password from the file. And up to the next level.
+
 
 
