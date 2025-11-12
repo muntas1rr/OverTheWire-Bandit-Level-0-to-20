@@ -23,7 +23,7 @@ Usage: ./suconnect <portnumber>
 This program will connect to the given port on localhost using TCP. If it receives the correct password from the other side, the next password is transmitted back.
 
 bandit20@bandit:~$ ./suconnect 2020
-Read: [The Password of the previous level]
+Read: [PREVIOUS LEVEL PASSWORD]
 Password matches, sending next password
 
 
@@ -33,7 +33,7 @@ Terminal Output (Terminal 2):
 bandit20@bandit:~$ nc -lvp 2020
 Listening on 0.0.0.0 2020
 Connection received on localhost 37318
-[The Password of the previous level]
-[The Password for the next level]
+[PREVIOUS LEVEL PASSWORD]
+[REDACTED PASSWORD OUTPUT]
 
 
