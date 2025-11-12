@@ -1,6 +1,8 @@
 Bandit Level 16 → Level 17
 
-Level Goal: The password for the next level is obtained by sending the current level password to 
+Level Goal: 
+
+The password for the next level is obtained by sending the current level password to 
 an SSL service running on one of the ports in the range 31000–32000. 
 The service returns a private SSH key when the correct password is submitted.
 
@@ -53,9 +55,6 @@ ubuntu:~$ ssh -i bandit17.key bandit17@bandit.labs.overthewire.org -p 2220
 (SSH session established; OverTheWire welcome banner shown)
 
 bandit17@bandit:~$
-
-
-
 
 
 
