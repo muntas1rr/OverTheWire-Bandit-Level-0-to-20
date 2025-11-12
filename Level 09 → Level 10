@@ -7,6 +7,7 @@ Level Goal: The password for the next level is stored in the file data.txt in on
 I listed files in the home directory with ls and saw data.txt.
 I used strings data.txt | grep == to extract printable strings that were preceded by '==' and
 identify lines beginning with multiple '=' characters.
+
 One of the matching lines contained the password for the next level.
 
 
@@ -29,6 +30,7 @@ f\Z'========== is
 Entered the SSH command: ssh bandit10@bandit.labs.overthewire.org -p 2220
 
 When prompted for the password, I pasted the password. And up to the next level.
+
 
 
 
