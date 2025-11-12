@@ -7,6 +7,7 @@ submitting the password of the current level to port 30000 on localhost.
 
 I read the current level password from /etc/bandit_pass/bandit14 using cat.
 I submitted that password to localhost port 30000 using netcat (nc). 
+
 The server responded with "Correct!" and printed the password for the next level.
 
 
@@ -28,6 +29,7 @@ Correct!
 Entered the SSH command: ssh bandit15@bandit.labs.overthewire.org -p 2220
 
 When prompted for the password, I pasted the password. And up to the next level.
+
 
 
 
