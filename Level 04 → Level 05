@@ -1,6 +1,8 @@
 Bandit Level 4 → Level 5
 
-Level Goal: The password for the next level is stored in the only human-readable file in the inhere directory.
+Level Goal: 
+
+The password for the next level is stored in the only human-readable file in the inhere directory.
 
 
 
@@ -44,6 +46,7 @@ bandit4@bandit:~/inhere$ cat ./-file07
 Entered the SSH command: ssh bandit5@bandit.labs.overthewire.org -p 2220
 
 When prompted for the password, I pasted the password. And up to the next level.
+
 
 
 
