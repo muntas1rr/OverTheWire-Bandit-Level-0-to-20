@@ -21,18 +21,18 @@ ubuntu:~$ ssh bandit18@bandit.labs.overthewire.org -p 2220
 Byebye! (logged out immediately)
 
 ubuntu:~$ ssh -p 2220 bandit18@bandit.labs.overthewire.org -t /bin/sh
-# (password prompt) [I LOGGED IN AFTER INPUTTING THE PASSWORD]
+# (password prompt) [I SUCCESSFULLY LOGGED IN AFTER INPUTTING THE PASSWORD]
 
 $ ls
 readme
 
 $ cat readme
-[Password for the next level]
-
+[REDACTED PASSWORD OUTPUT]
 
 
 
 Entered the SSH command: ssh bandit19@bandit.labs.overthewire.org -p 2220
+
 When prompted for the password, I pasted the password for the next level. And up to the next level.
 
 
