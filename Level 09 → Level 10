@@ -1,6 +1,8 @@
 Bandit Level 9 → Level 10
 
-Level Goal: The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.
+Level Goal: 
+
+The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.
 
 
 
@@ -29,6 +31,7 @@ f\Z'========== is
 Entered the SSH command: ssh bandit10@bandit.labs.overthewire.org -p 2220
 
 When prompted for the password, I pasted the password. And up to the next level.
+
 
 
 
