@@ -17,13 +17,14 @@ bandit11@bandit:~$ ls
 data.txt
 
 bandit11@bandit:~$ tr 'A-Za-z' 'N-ZA-Mn-za-m' < data.txt
-The password is 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+The password is [REDACTED PASSWORD OUTPUT]
 
 
 
 
 Entered the SSH command: ssh bandit12@bandit.labs.overthewire.org -p 2220
 
-When prompted for the password, I pasted the password from the decoded output (7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4). And up to the next level.
+When prompted for the password, I pasted the password from the decoded output. And up to the next level.
+
 
 
