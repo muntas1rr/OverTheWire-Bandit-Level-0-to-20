@@ -20,12 +20,13 @@ bandit2@bandit:~$ ls
 --spaces in this filename--
 
 bandit2@bandit:~$ cat ./--spaces\ in\ this\ filename--
-MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+[The Password for the next level]
 
 
 
 
 Entered the SSH command: ssh bandit3@bandit.labs.overthewire.org -p 2220
 
-When prompted for the password, I pasted the password from the file (MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx). And up to the next level.
+When prompted for the password, I pasted the password from the file. And up to the next level.
+
 
