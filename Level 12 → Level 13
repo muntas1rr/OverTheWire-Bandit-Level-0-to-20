@@ -1,6 +1,8 @@
 Bandit Level 12 → Level 13
 
-Level Goal: The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed.
+Level Goal: The password for the next level is stored in the file data.txt, 
+which is a hexdump of a file that has been repeatedly compressed.
+
 
 This is is little bit long, but please bear with me... 
 
@@ -331,7 +333,7 @@ Line by line, short and direct explanations:
 
 Entered the SSH command: ssh bandit13@bandit.labs.overthewire.org -p 2220
 
-When prompted for the password, I pasted the password from the file. And up to the next level.
+When prompted for the password, I pasted the password. And up to the next level.
 
 
 ** BONUS **
@@ -339,6 +341,7 @@ When prompted for the password, I pasted the password from the file. And up to t
 Check out my LinkedIn post about this Level - 
 
 https://www.linkedin.com/posts/moque_linux-devops-problemsolving-activity-7391851810128306177-uk3e?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFS5ZQoBgOu59hBf6sHx7pXGLogMvszOzw0
+
 
 
 
