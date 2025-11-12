@@ -31,7 +31,9 @@ bandit3@bandit:~/inhere$ cat ./...Hiding-From-You
 
 Entered the SSH command: ssh bandit4@bandit.labs.overthewire.org -p 2220
 
-When prompted for the password, I pasted the password from the file. And up to the next level.
+When prompted for the password, I pasted the password for the next level. And up to the next level.
+
+
 
 
 
