@@ -20,8 +20,7 @@ Terminal Output (Terminal 1):
 
 bandit20@bandit:~$ ./suconnect
 Usage: ./suconnect <portnumber>
-This program will connect to the given port on localhost using TCP. 
-If it receives the correct password from the other side, the next password is transmitted back.
+This program will connect to the given port on localhost using TCP. If it receives the correct password from the other side, the next password is transmitted back.
 
 bandit20@bandit:~$ ./suconnect 2020
 Read: [PREVIOUS LEVEL PASSWORD]
@@ -36,6 +35,7 @@ Listening on 0.0.0.0 2020
 Connection received on localhost 37318
 [PREVIOUS LEVEL PASSWORD]
 [REDACTED PASSWORD OUTPUT]
+
 
 
 
