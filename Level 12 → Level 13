@@ -323,7 +323,7 @@ Line by line, short and direct explanations:
 * `bandit12@bandit:/tmp/tmp.p92EagA32V$ cat data8`  
     -- print the file.
     
-* `The password is FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn`  
+* `The password is [REDACTED PASSWORD OUTPUT]`  
     -- the file prints the password you needed.
 
 
@@ -331,7 +331,7 @@ Line by line, short and direct explanations:
 
 Entered the SSH command: ssh bandit13@bandit.labs.overthewire.org -p 2220
 
-When prompted for the password, I pasted the password from the file (FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn). And up to the next level.
+When prompted for the password, I pasted the password from the file. And up to the next level.
 
 
 ** BONUS **
@@ -339,6 +339,7 @@ When prompted for the password, I pasted the password from the file (FO5dwFsc0cb
 Check out my LinkedIn post about this Level - 
 
 https://www.linkedin.com/posts/moque_linux-devops-problemsolving-activity-7391851810128306177-uk3e?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFS5ZQoBgOu59hBf6sHx7pXGLogMvszOzw0
+
 
 
 
