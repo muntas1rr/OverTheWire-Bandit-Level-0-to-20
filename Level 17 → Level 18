@@ -2,7 +2,8 @@ Bandit Level 17 → Level 18
 
 Level Goal:
 
-The password for the next level is in the passwords.new file in the home directory and is the only line that has been changed between passwords.old and passwords.new.
+The password for the next level is in the passwords.new file in the home directory and 
+is the only line that has been changed between passwords.old and passwords.new.
 
 
 
@@ -20,12 +21,12 @@ passwords.new  passwords.old
 
 bandit17@bandit:~$ diff passwords.old passwords.new
 42c42
-< [old password - censored]
+< [old password - REDACTED]
 ---
-> [new password - censored]
+> [new password - REDACTED]
 
 bandit17@bandit:~$ diff passwords.old passwords.new | grep '>' | sed 's/> //'
-[new password - censored]
+[[REDACTED PASSWORD OUTPUT]
 
 
 
@@ -33,6 +34,7 @@ bandit17@bandit:~$ diff passwords.old passwords.new | grep '>' | sed 's/> //'
 Entered the SSH command: ssh bandit18@bandit.labs.overthewire.org -p 2220
 
 When prompted for the password, I pasted the password from the file. And up to the next level.
+
 
 
 
