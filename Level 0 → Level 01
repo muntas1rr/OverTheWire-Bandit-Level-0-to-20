@@ -1,6 +1,7 @@
 Bandit Level 0 → Level 1
 
-Level Goal: The password for the next level is stored in a file called readme located in the home directory. Use that password to log in to the next level.
+Level Goal: The password for the next level is stored in a file called readme located in the home directory. 
+Use that password to log in to the next level.
 
 
 
@@ -24,14 +25,15 @@ If you are following a course, workshop, walkthrough or other educational activi
 please inform the instructor about the rules as well and encourage them to
 contribute to the OverTheWire community so we can keep these games free!
 
-The password you are looking for is: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+The password you are looking for is: [The Password for the next level]
 
 
 
 
 Entered the SSH command: ssh bandit1@bandit.labs.overthewire.org -p 2220
 
-When prompted for the password, I pasted the password from the readme file(ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If). And up to the next level.
+When prompted for the password, I pasted the password from the readme file. And up to the next level.
+
 
 
 
