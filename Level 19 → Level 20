@@ -10,6 +10,7 @@ the usual place (/etc/bandit_pass), after you have used the setuid binary.
 
 I logged in as bandit19 and listed files, finding the setuid binary bandit20-do. 
 Running the binary without arguments showed usage instructions. 
+
 I used the binary to read the password in /etc/bandit_pass/bandit20.
 
 
@@ -49,7 +50,6 @@ bandit19@bandit:~$ ./bandit20-do cat /etc/bandit_pass/bandit20
 Entered the SSH command: ssh bandit20@bandit.labs.overthewire.org -p 2220
 
 When prompted for the password, I pasted the password. And up to the next level.
-
 
 
 
