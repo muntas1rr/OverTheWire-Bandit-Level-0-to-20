@@ -5,6 +5,7 @@ Level Goal: The password for the next level is stored in a hidden file in the in
 I listed files in the home directory using the ls command and saw the inhere directory. 
 I changed into that directory with cd inhere and listed all files, including hidden ones, using ls -la.
 There was a hidden file called ...Hiding-From-You. I used cat ./...Hiding-From-You to read the file (explicit path avoids ambiguity). 
+
 This displayed the password for the next level.
 
 
@@ -32,6 +33,7 @@ bandit3@bandit:~/inhere$ cat ./...Hiding-From-You
 Entered the SSH command: ssh bandit4@bandit.labs.overthewire.org -p 2220
 
 When prompted for the password, I pasted the password. And up to the next level.
+
 
 
 
