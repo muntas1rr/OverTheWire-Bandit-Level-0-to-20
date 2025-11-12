@@ -33,9 +33,7 @@ bandit17@bandit:~$ diff passwords.old passwords.new | grep '>' | sed 's/> //'
 
 Entered the SSH command: ssh bandit18@bandit.labs.overthewire.org -p 2220
 
-When prompted for the password, I pasted the password from the file. And up to the next level.
-
-
+When prompted for the password, I pasted the password. And up to the next level.
 
 
 
