@@ -1,6 +1,8 @@
 Bandit Level 13 → Level 14
 
-Level Goal: The password for the next level is stored in /etc/bandit_pass/bandit14 and
+Level Goal: 
+
+The password for the next level is stored in /etc/bandit_pass/bandit14 and
 can only be read by user bandit14. For this level you are given a private SSH key (sshkey.private)
 that can be used to log into the next level.
 
@@ -42,6 +44,7 @@ ubuntu:~$ ssh bandit14@bandit.labs.overthewire.org -p 2220 -i key
 (SSH session established; OverTheWire welcome banner and MOTD shown)
 
 bandit14@bandit:~$
+
 
 
 
