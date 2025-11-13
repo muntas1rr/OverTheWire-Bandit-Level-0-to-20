@@ -9,8 +9,8 @@ If the password is correct, it sends back the password for the next level.
 
 
 I ran two commands in two terminals as bandit20. In one terminal, 
-I started a netcat listener on port 9999 and pasted the previous level password. 
-In the other terminal, I ran ./suconnect 9999, which connected to the listener, verified the password, 
+I started a netcat listener on port 2020 and pasted the previous level password. 
+In the other terminal, I ran ./suconnect 2020, which connected to the listener, verified the password, 
 and sent the next password back to the netcat terminal.
 
 
@@ -35,6 +35,7 @@ Listening on 0.0.0.0 2020
 Connection received on localhost 37318
 [PREVIOUS LEVEL PASSWORD]
 [REDACTED PASSWORD OUTPUT]
+
 
 
 
