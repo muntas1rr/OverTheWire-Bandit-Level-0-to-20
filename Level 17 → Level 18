@@ -26,7 +26,7 @@ bandit17@bandit:~$ diff passwords.old passwords.new
 > [new password - REDACTED]
 
 bandit17@bandit:~$ diff passwords.old passwords.new | grep '>' | sed 's/> //'
-[[REDACTED PASSWORD OUTPUT]
+[REDACTED PASSWORD OUTPUT]
 
 
 
@@ -34,6 +34,7 @@ bandit17@bandit:~$ diff passwords.old passwords.new | grep '>' | sed 's/> //'
 Entered the SSH command: ssh bandit18@bandit.labs.overthewire.org -p 2220
 
 When prompted for the password, I pasted the password. And up to the next level.
+
 
 
 
