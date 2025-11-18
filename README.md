@@ -40,7 +40,7 @@ The documentation includes terminal outputs to illustrate actual commands and re
 
 To explore my solutions and learning journey:
 
-1. Clone this repository to your local machine: git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+1. Clone this repository to your local machine: https://github.com/muntas1rr/OverTheWire-Bandit-Level-0-to-20.git
 2. Browse the markdown files organized by levels.
 3. Read the **Level Goal**, followed by explanations and terminal output demonstrating each solution.
 4. Use this repository as a reference or learning resource for similar Linux command-line challenges.
